@@ -342,7 +342,7 @@ export default function App() {
     setMessages(prev => [...prev, { type: "user", text: msg, triage: null, isFollowUp: false }]);
 
     try {
-      const res = await fetch("http://127.0.0.1:8000/api/triage/chat", {
+      const res = await fetch("https://symptomix.onrender.com/api/triage/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ message: msg, conversation_history: history, language }),
